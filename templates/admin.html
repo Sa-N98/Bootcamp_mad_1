@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+</head>
+<body>
+    <h1>Add Movies</h1>
+    <form name="Add" action="/admin" method="post" >
+        <input type="text" name="formType" value="add" hidden>
+        <label for="title">Movie Title:</label>
+        <input type="text" name="title" placeholder="Movie Title" required><br>
+
+        <label for="rating">Movie rating:</label>
+        <input type="number" name="rating" placeholder="Rating" min="1" max="10" step="0.1" required><br>
+
+        <label for="poster">Movie poster:</label>
+        <input type="text" name="poster" placeholder="Poster link" pattern="https?://.+" required><br>
+
+        <input type="submit" value="submit" >
+
+    </form>
+    
+    <h1>Delete Movies</h1>
+    <form name="Delete" action="/admin" method="post">
+        <input type="text" name="formType" value="delete" hidden>
+        <label for="title">Movie Title:</label>
+        <input type="text" name="title" placeholder="Movie Title"><br>
+        <input type="submit" value="submit" >
+
+    </form>
+
+</body>
+</html>

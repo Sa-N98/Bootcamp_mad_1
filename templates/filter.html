@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="static\cards.css" rel="stylesheet">
+    <title>Filter</title>
+    
+    <style>
+        img {
+            width: 20%;
+            }
+    </style>
+</head>
+<body>
+<h1>Search Results:</h1>
+{% for item in data %}
+<h3>{{ item.title }} </h3>
+<img src = {{ item.poster }} >
+<h4> Rating: {{ item.rating }} /10</h4>
+{% endfor %}
+
+<p>BootStrap starts here</p>
+
+<div class="container">
+    <div class="row">
+        {% for item in data %}
+        <div class="col-md-2">
+            <div id="card-1" style="background-image:url('{{ item.poster }}') ;">
+                <div class="shadow">
+                <h2>{{item.title}}</h2>
+                <h4>Rating: {{ item.rating }} /10</h4>
+                </div>
+            </div>
+        </div> 
+        {% endfor %} 
+    </div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

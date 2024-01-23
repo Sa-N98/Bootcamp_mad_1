@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="static\cards.css" rel="stylesheet">
+    <title>Bootcamp</title>
+
+    <!-- css -->
+    <style>
+        ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #04AA6D;
+}
+
+img {
+    width: 20%;
+}
+
+
+</style>
+</head>
+<body>
+    <ul>
+        <li><a class="active" href="/home">Home</a></li>
+        <li><a href="/bookings">Bookings</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="/about">About</a></li>
+      </ul>
+      
+      
+      <form id="demo" name="demo" action="/filter" method="POST">
+        <select name="filterOptions" >
+          <option value="title">title</option>
+          <option value="rating">rating</option>
+          <option value="genre">genre</option>
+        </select>
+        <input type="text" name="searchKey" placeholder="Search">
+        <input type="submit" value="submit" >
+      </form>
+
+  <h2>Top Movie</h2>
+  {% for show in shows %}
+  <h4>{{ show.title }}</h4>
+  <img src = {{ show.poster }} >
+  <h4> Rating: {{ show.rating }} /10</h4>
+  {% for i in show.genre %}
+  <p>{{ i.type }}</p>
+  {% endfor %}
+  <hr>
+  {% endfor %}
+
+  <div>this is how you style the above code using css and jinja templating</div> 
+  
+
+  {% for show in shows %}
+  <div id="card-1" style="background-image:url('{{ show.poster }}') ;">
+        <div class="shadow">
+        <h2>{{show.title}}</h2>
+        <h4>Rating: {{ show.rating }} /10</h4>
+        </div>
+    </div>
+  {% endfor %}
+   
+</body>
+</html>

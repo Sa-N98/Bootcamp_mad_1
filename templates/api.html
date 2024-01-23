@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>API</title>
+</head>
+<body>
+    <h3>Working with APIs</h3>
+    <h4 id="Movie_Name"></h4>
+    <h4 id="Year"></h4>
+    <h4 id="Cast"></h4>
+    <p id="Plot"></p>
+
+
+
+
+
+
+    <script>
+        let title ="AVENGERS"
+        url = 'http://www.omdbapi.com/?t=' + title + '&apikey=78f7079e'
+        
+        axios.get(url).then( apiResult =>{  console.log(apiResult)
+                                            console.log(apiResult.status)
+                                            console.log(apiResult.statusText)
+                                            console.log(apiResult.data)
+                                            console.log(apiResult.data.Title)
+
+                                            console.log(document)
+                                            console.log(document.getElementById('Movie_Name'))
+                                            document.getElementById('Movie_Name').innerHTML = "Movie Title: " + apiResult.data.Title
+                                            document.getElementById('Year').innerHTML = "Year of Release: " + apiResult.data.Year
+                                            document.getElementById('Cast').innerHTML = "Cast: " + apiResult.data.Actors
+                                            document.getElementById('Plot').innerHTML = "<h4> Plot: </h4>" + apiResult.data.Plot
+
+                                            } )
+        // console.log( axios.get('http://192.168.160.141:5000/api/Bootcamp/'))
+
+        axios.get('http://192.168.160.141:5000/api/Bootcamp/').then(myresult => {console.log(myresult.data)})
+        
+
+    </script>
+</body>
+</html>

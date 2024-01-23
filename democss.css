@@ -1,0 +1,33 @@
+#element1{
+    background-color: blueviolet;
+    color: white;
+    width: 200px;
+    height: 200px;
+}
+
+#element2{
+    background-color: rgb(220, 235, 7);
+    color: white;
+    width: 200px;
+    height: 200px;
+}
+
+p{
+    background-color: blanchedalmond;
+    width: 50%;
+    height: 300px;
+}
+
+li{
+    background-color: brown;
+}
+
+.p_demo{
+    background-color: chocolate;
+}
+
+
+/* 
+# - means id 
+. - means class
+ */
